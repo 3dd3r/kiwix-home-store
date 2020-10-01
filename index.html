@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Store & More</title>
+  <!-- FONT Awesome -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NavBar -->
+  <nav class="navbar">
+    <div class="navbar-center">
+      <span class="nav-icon">
+        <i class="fas fa-bars"></i>
+      </span>
+      <div class="logo">
+        kiwix<span>Home.</span>
+      </div>
+      <div class="cart-btn">
+        <span class="nav-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </span>
+        <div class="cart-items">0</div>
+      </div>
+    </div>
+  </nav>
+  <!-- End of NavBar -->
+  <!-- Start Hero -->
+  <header class="hero">
+    <div class="banner">
+      <h1 class="banner-title">Whatever you’ve got in mind, </br> We’ve got inside!</h1>
+      <!-- <h3 class="banner-subtitle">.</h3> -->
+      <button class="banner-btn">Shop Now!</button>
+    </div>
+  </header>
+  <!-- End Hero -->
+  <!-- Start Products -->
+  <section class="products">
+    <div class="section-title">
+      <h2>Our Products</h2>
+    </div>
+    <div class="products-center">
+      <!-- Single Product -->
+      <article class="product">
+        <div class="img-container">
+          <img class="product-img" src="./imgs/product-1.jpeg" alt="">
+          <button class="bag-btn" data-id="1">
+            <i class="fas fa-cart-plus"></i>
+            Add to Cart
+          </button>
+        </div>
+        <h3>King bed</h3>
+        <h4>$34</h4>
+      </article>
+      <!-- End of single product -->
+    </div>
+  </section>
+  <!-- End of Products -->
+
+  <!-- Start Cart -->
+  <div class="cart-overly">
+    <div class="cart">
+     <span class="close-cart">
+        <i class="fas fa-window-close"></i>
+      </span>
+      <h2>Your Cart</h2>
+      <div class="cart-content">
+        <!-- Cart Item -->
+        <div class="cart-item">
+          <img src="./imgs/product-6.jpeg" alt="">
+          <div>
+            <h4>King Bed</h4>
+            <h5>$22.00</h5>
+            <span class="remove-item">Remove</span>
+          </div>
+          <div>
+            <i class="fas fa-chevron-up"></i>
+            <p class="item-amount">1</p>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+        <!-- End of Cart Item -->
+      </div>
+      <div class="cart-footer">
+        <h3>Your total : $ <span class="cart-total"></span>0</h3>
+        <button class="clear-cart clear-btn">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+  <!-- End of Cart -->
+  <script src="app.js"></script>
+  <script src="https://kit.fontawesome.com/8e7edb5934.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
