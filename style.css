@@ -7,7 +7,7 @@
     --mainMauve: #5d2e46;
     --lastColor: #b58db6;
     --mainSpacing: 0.1rem;
-    --mainTransition: all 0.3s linear;
+    --mainTransition: all .3s linear;
   }
 
   * {
@@ -85,7 +85,7 @@
   background: #3434346b;
   display: inline-block;
   padding: 2rem 10rem;
-  color: #e8d6cb;
+  color: var(--primaryColor);
 }
 .banner-title {
   font-weight: lighter;
@@ -138,11 +138,11 @@
   overflow: hidden;
 }
 .bag-btn {
-  color: var(--mainPink);
+  color: var(--mainMauve);
+  background: var(--primaryColor);
   position: absolute;
   top: 70%;
   right: 0;
-  background: var(--mainPenny);
   border: none;
   text-transform: uppercase;
   padding: 0.5rem 0.75rem;
@@ -154,6 +154,8 @@
 }
 .bag-btn:hover {
   color: var(--primaryColor);
+  background: var(--mainMauve);
+  text-shadow: .7px .7px var(--mainPenny);
 }
 .fa-cart-plus {
   margin-right: 0.5rem;
@@ -168,7 +170,8 @@
   transition: var(--mainTransition);
 }
 .img-container:hover .product-img {
-  opacity: 0.5;
+
+  opacity: .5;
 }
 
 .product h3 {
