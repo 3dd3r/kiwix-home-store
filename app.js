@@ -1,3 +1,18 @@
+// const contentful = require("contentful");
+const client = contentful.createClient({
+  // This is the space ID. A space is like a project folder in Contentful terms
+  space: "i3jkzk6o0xbg",
+  // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+  accessToken: "d-QfXSoNwjXwPV09gPTh8z0_-b2KZQ-3VsPwW32i-0I"
+});
+
+// This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
+// client
+//   .getEntry("5PeGS2SoZGSa4GuiQsigQu")
+//   .then(entry => console.log(entry))
+//   .catch(err => console.log(err));
+
+
 // Declaring Variables
 
 const cartBtn = document.querySelector(".cart-btn");
@@ -19,15 +34,19 @@ let buttonsDOM = [];
 class Products {
     async getProducts() {
         try {
-            let result = await fetch("products.json");
-            let data = await result.json();
+            let contentful = await client.getEntries({
+                content_type: "kiwixHomeProducts"
+            });
+            
+            // let result = await fetch("products.json");
+            // let data = await result.json();
 
-            let products = data.items;
+            let products = contentful.items;
             products = products.map(item => {
-                const { id } = item.sys;
                 const { title, price } = item.fields;
+                const { id } = item.sys;
                 const image = item.fields.image.fields.file.url;
-                return { id, title, price, image }
+                return { title, price, id, image }
             })
             return products
         } catch (error) {
@@ -97,8 +116,9 @@ class UI {
             tempTotal += item.price * item.amount;
             itemsTotal += item.amount;
         })
-        cartTotal.innerText = parseFloat(tempTotal.toFixed(2))
+        cartTotal.innerText = parseFloat(tempTotal).toFixed(2)
         cartItems.innerText = itemsTotal;
+
     }
     addCartItem(item) {
         const div = document.createElement('div');

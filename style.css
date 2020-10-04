@@ -239,7 +239,7 @@
   text-align: center;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 2rem;
-  border: solid 1px var(--mainPenny);
+  border: solid 1.5px var(--mainPenny);
   padding: 1rem;
   margin-top: 2rem;
 }
