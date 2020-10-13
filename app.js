@@ -25,6 +25,18 @@ const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
 
+
+const showMenu = () => {
+    const toggleNav = document.querySelector(".toggle-nav");
+    const iconMenu = document.querySelector(".icon-menu");
+    iconMenu.addEventListener('click', () => {
+        toggleNav.classList.toggle('nav-active');
+    });
+}
+
+showMenu ();
+
+
 // Cart Items
 let cart = [];
 
@@ -124,11 +136,13 @@ class UI {
         const div = document.createElement('div');
         div.classList.add('cart-item');
         div.innerHTML = `
-        <img src=${item.image} alt="product">
+        <img src=${item.image} alt=${item.title}>
           <div>
             <h4>${item.title}</h4>
             <h5>$${item.price}</h5>
-            <span class="remove-item" data-id=${item.id}>Remove</span>
+  
+            <i class="fas fa-trash-alt" data-id=${item.id}> </i>
+
           </div>
           <div>
             <i class="fas fa-chevron-up" data-id=${item.id}></i>
@@ -164,11 +178,14 @@ class UI {
         });
         // cart functionality
         cartContent.addEventListener('click', e => {
-            if (e.target.classList.contains('remove-item')) {
+            if (e.target.classList.contains('fa-trash-alt')) {
+
                 let removeItem = e.target;
                 let id = removeItem.dataset.id;
+                console.log(removeItem.parentElement.parentElement);
                 cartContent.removeChild(removeItem.parentElement.parentElement);
                 this.removeItem(id);
+
             } else if (e.target.classList.contains('fa-chevron-up')) {
                 let addAmount = e.target;
                 let id = addAmount.dataset.id;
@@ -182,7 +199,6 @@ class UI {
                 let lowerAmount = e.target;
                 let id = lowerAmount.dataset.id;
                 let tempItem = cart.find(item => item.id === id);
-                // console.log(tempItem);
 
                 tempItem.amount = tempItem.amount - 1;
 
@@ -197,10 +213,10 @@ class UI {
             }
         })
     }
+
     clearCart() {
         let cartItems = cart.map(item => item.id);
         cartItems.forEach(id => this.removeItem(id));
-        // console.log(cartContent.children);
 
         while(cartContent.children.length > 0) {
             cartContent.removeChild(cartContent.children[0])

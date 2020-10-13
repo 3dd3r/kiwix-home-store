@@ -5,21 +5,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Store & More</title>
-  <!-- FONT Awesome -->
 
-  <!-- Custom CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <div class="container">
   <!-- NavBar -->
   <nav class="navbar">
     <div class="navbar-center">
-      <span class="nav-icon">
+      <span class="icon-menu">
         <i class="fas fa-bars"></i>
       </span>
       <div class="logo">
-        kiwix<span>Home.</span>
+        <div class="logo-img">
+          <img src="./imgs/logoK.png" alt="">
+        </div>
+        <div class="logo-txt">
+          kiwix<span>Home.</span>
+        </div>
+      </div>
+      <div>
+        <ul class="nav-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#our-story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
       <div class="cart-btn">
         <span class="nav-icon">
@@ -29,33 +42,39 @@
       </div>
     </div>
   </nav>
+  <div class="toggle-nav">
+    <ul class="">
+      <li><a href="#">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#our-story">Our Story</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
   <!-- End of NavBar -->
   <!-- Start Hero -->
   <header class="hero">
     <div class="banner">
       <h1 class="banner-title">Whatever you’ve got in mind, </br> We’ve got inside!</h1>
-      <!-- <h3 class="banner-subtitle">.</h3> -->
-      <button class="banner-btn">Shop Now!</button>
+      <a href="#products"><button class="banner-btn">Shop Now!</button></a>
     </div>
   </header>
   <!-- End Hero -->
   <!-- Start Products -->
-  <section class="products">
-    <div class="section-title">
+  <section class="products" >
+    <div class="section-title" id="products">
       <h2>Our Products</h2>
     </div>
     <div class="products-center">
       <!-- Single Product -->
       <article class="product">
         <div class="img-container">
-          <img class="product-img" src="./imgs/product-1.jpeg" alt="">
+          <img class="product-img" src="" alt="">
           <button class="bag-btn" data-id="1">
             <i class="fas fa-cart-plus"></i>
-            Add to Cart
           </button>
         </div>
-        <h3>King bed</h3>
-        <h4>$34</h4>
+        <h3></h3>
+        <h4></h4>
       </article>
       <!-- End of single product -->
     </div>
@@ -65,10 +84,10 @@
   <!-- Start Cart -->
   <div class="cart-overlay">
     <div class="cart">
-     <span class="close-cart">
+      <span class="close-cart">
         <i class="fas fa-window-close"></i>
       </span>
-      <h2>Your Shopping Cart</h2>
+      <h2>Your Basket</h2>
       <div class="cart-content">
         <!-- Cart Item -->
         <!-- <div class="cart-item">
@@ -76,7 +95,7 @@
           <div>
             <h4>King Bed</h4>
             <h5>$22.00</h5>
-            <span class="remove-item">Remove</span>
+            <span class="remove-item"></span>
           </div>
           <div>
             <i class="fas fa-chevron-up"></i>
@@ -93,10 +112,68 @@
     </div>
   </div>
   <!-- End of Cart -->
+
+  <!-- Featured product -->
+  <h2 class="featured-title" id="our-story">Our Story</h2>
+  <section class="featured-product" >
+    <div class="featured-img">
+      <img src="./imgs/img003.jpg" alt="">
+    </div>
+    <div class="featured-info">
+      <h3>Because home is more
+        important than ever.</h3>
+      <p>kiwix<strong>Home</strong> is a company built around the importance of home, we're passionate about helping
+        Habitat for Humanity work alongside families to build affordable housing. In these uncertain times, it's more
+        important. than ever that we come together to help these new homeowners build safe, strong and stable
+        communities.</p>
+      <a href="contact.html"><button class="product-btn">Learn More!</button></a>
+    </div>
+  </section>
+  <!-- end of featured -->
+  <!-- Footer -->
+  <footer class="footer-distributed">
+    <div class="footer-left">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>99 Revolution Street</span> State, Morocco</p>
+      </div>
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+1 666 996699</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:contact@kiwixhome.com">contact@kiwixhome.com</a></p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About the company</span>
+        kiwix<strong>Home</strong> is one of the world's largest online destinations for the home. </br> We believe
+        everyone should live in a home they love. Through technology &amp; innovation.
+      </p>
+      <div class="footer-icons">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com/3dd3r3" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/3dd3r" target="_blank"><i class="fa fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+  <div class="copyright" id="copyright">
+    <div class="footer-logo">
+      <img src="./imgs/logoK.png" alt="">
+    </div>
+    <p>kiwixHome © 2020. Developed with ❤ By 3dd3r</p>
+  </div>
+</div>
+  <!-- End footer -->
+
   <!-- Contentful -->
   <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+  <!-- JavaScript File -->
   <script src="app.js"></script>
+  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/8e7edb5934.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
